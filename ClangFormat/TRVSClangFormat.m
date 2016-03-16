@@ -44,7 +44,7 @@ static TRVSClangFormat *sharedPlugin;
   self.preferences = [[TRVSPreferences alloc]
       initWithApplicationID:self.bundle.bundleIdentifier];
   NSString *style = [self.preferences objectForKey:[self stylePreferencesKey]]
-                        ?: [[self styles] firstObject];
+                        ?: [[self styles] lastObject];
   self.formatter = [TRVSFormatter sharedFormatter];
   self.formatter.style = style;
 
